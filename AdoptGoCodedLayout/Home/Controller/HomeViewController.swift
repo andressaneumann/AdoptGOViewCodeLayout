@@ -7,25 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomeViewController: UIViewController {
     
     let welcomeLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        let attributedText = NSMutableAttributedString(string: "Olá, ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30), NSAttributedString.Key.foregroundColor: UIColor.primaryFontColor])
         
-        attributedText.append(NSAttributedString(string: "usuário!", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30), NSAttributedString.Key.foregroundColor: UIColor.mainPurpleColor]))
-        
-        label.attributedText = attributedText
+        label.attributedText = NSMutableAttributedString().normal("Olá, ", 30, .primaryFontColor).bold("usuário!", 30, .mainPurpleColor)
 
         return label
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
 
         let attributedText = NSMutableAttributedString(string: "Seu novo melhor amigo pode estar aqui!", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor: UIColor.primaryFontColor])
         
@@ -38,25 +33,32 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.mainBackgroundGrayColor
+
+        setup()        
+    }
+}
+
+extension HomeViewController: ViewConfigurator {
+    
+    func setupConstraints() {
         
+        welcomeLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(60)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            make.height.equalTo(50)
+        }
         
-        setupLabels()
-        setupLayout()
-        
+        descriptionLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(10)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-20)
+        }
     }
     
-    private func setupLabels() {
+    func setupViewHierarchy() {
         view.addSubview(welcomeLabel)
         view.addSubview(descriptionLabel)
     }
     
-    private func setupLayout() {
-        welcomeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
-        welcomeLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        
-        descriptionLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 10).isActive = true
-        descriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-    }
-
 }

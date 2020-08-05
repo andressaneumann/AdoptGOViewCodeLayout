@@ -3,27 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6C908AEF24DAF746004E20A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AEE24DAF746004E20A3 /* HomeViewController.swift */; };
 		6C908AF424DB0A1B004E20A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF324DB0A1B004E20A3 /* UIColor.swift */; };
+		6C908AF724DB2362004E20A3 /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF624DB2362004E20A3 /* ViewConfigurator.swift */; };
+		6C908AF924DB2970004E20A3 /* NSMutableAttributedString+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF824DB2970004E20A3 /* NSMutableAttributedString+Styles.swift */; };
 		6CD33C0524D99102001949C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD33C0424D99102001949C7 /* AppDelegate.swift */; };
 		6CD33C0724D99102001949C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD33C0624D99102001949C7 /* SceneDelegate.swift */; };
 		6CD33C0E24D99103001949C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD33C0D24D99103001949C7 /* Assets.xcassets */; };
 		6CD33C1124D99103001949C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CD33C0F24D99103001949C7 /* LaunchScreen.storyboard */; };
+		E0BDA0323A705DED5082CE49 /* Pods_AdoptGoCodedLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E38514B54390D17FACB3F39B /* Pods_AdoptGoCodedLayout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6BA3E63D61D718373B789A4D /* Pods-AdoptGoCodedLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptGoCodedLayout.release.xcconfig"; path = "Target Support Files/Pods-AdoptGoCodedLayout/Pods-AdoptGoCodedLayout.release.xcconfig"; sourceTree = "<group>"; };
 		6C908AEE24DAF746004E20A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6C908AF324DB0A1B004E20A3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6C908AF624DB2362004E20A3 /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
+		6C908AF824DB2970004E20A3 /* NSMutableAttributedString+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Styles.swift"; sourceTree = "<group>"; };
 		6CD33C0124D99102001949C7 /* AdoptGoCodedLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptGoCodedLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD33C0424D99102001949C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CD33C0624D99102001949C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6CD33C0D24D99103001949C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CD33C1024D99103001949C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CD33C1224D99103001949C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7D0D27C8FA9C96F4FF940C0 /* Pods-AdoptGoCodedLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptGoCodedLayout.debug.xcconfig"; path = "Target Support Files/Pods-AdoptGoCodedLayout/Pods-AdoptGoCodedLayout.debug.xcconfig"; sourceTree = "<group>"; };
+		E38514B54390D17FACB3F39B /* Pods_AdoptGoCodedLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdoptGoCodedLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +39,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BDA0323A705DED5082CE49 /* Pods_AdoptGoCodedLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E9B539D8F11CF581895C472 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7D0D27C8FA9C96F4FF940C0 /* Pods-AdoptGoCodedLayout.debug.xcconfig */,
+				6BA3E63D61D718373B789A4D /* Pods-AdoptGoCodedLayout.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5590DC4E24072F08866492CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E38514B54390D17FACB3F39B /* Pods_AdoptGoCodedLayout.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6C908AEB24DAF709004E20A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +91,17 @@
 			isa = PBXGroup;
 			children = (
 				6C908AF324DB0A1B004E20A3 /* UIColor.swift */,
+				6C908AF824DB2970004E20A3 /* NSMutableAttributedString+Styles.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6C908AF524DB2354004E20A3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6C908AF624DB2362004E20A3 /* ViewConfigurator.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		6CD33BF824D99102001949C7 = {
@@ -74,6 +109,8 @@
 			children = (
 				6CD33C0324D99102001949C7 /* AdoptGoCodedLayout */,
 				6CD33C0224D99102001949C7 /* Products */,
+				1E9B539D8F11CF581895C472 /* Pods */,
+				5590DC4E24072F08866492CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +125,7 @@
 		6CD33C0324D99102001949C7 /* AdoptGoCodedLayout */ = {
 			isa = PBXGroup;
 			children = (
+				6C908AF524DB2354004E20A3 /* Utils */,
 				6C908AF024DB088D004E20A3 /* Extensions */,
 				6C908AEB24DAF709004E20A3 /* Home */,
 				6CD33C0424D99102001949C7 /* AppDelegate.swift */,
@@ -106,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CD33C1524D99103001949C7 /* Build configuration list for PBXNativeTarget "AdoptGoCodedLayout" */;
 			buildPhases = (
+				90DC2807B5F8AE96B8E688F2 /* [CP] Check Pods Manifest.lock */,
 				6CD33BFD24D99102001949C7 /* Sources */,
 				6CD33BFE24D99102001949C7 /* Frameworks */,
 				6CD33BFF24D99102001949C7 /* Resources */,
+				B51857DB0E8E69FA8DAF5564 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,14 +204,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90DC2807B5F8AE96B8E688F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdoptGoCodedLayout-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B51857DB0E8E69FA8DAF5564 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdoptGoCodedLayout/Pods-AdoptGoCodedLayout-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdoptGoCodedLayout/Pods-AdoptGoCodedLayout-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdoptGoCodedLayout/Pods-AdoptGoCodedLayout-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6CD33BFD24D99102001949C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6CD33C0524D99102001949C7 /* AppDelegate.swift in Sources */,
+				6C908AF724DB2362004E20A3 /* ViewConfigurator.swift in Sources */,
 				6CD33C0724D99102001949C7 /* SceneDelegate.swift in Sources */,
 				6C908AEF24DAF746004E20A3 /* HomeViewController.swift in Sources */,
+				6C908AF924DB2970004E20A3 /* NSMutableAttributedString+Styles.swift in Sources */,
 				6C908AF424DB0A1B004E20A3 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +390,7 @@
 		};
 		6CD33C1624D99103001949C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7D0D27C8FA9C96F4FF940C0 /* Pods-AdoptGoCodedLayout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,6 +408,7 @@
 		};
 		6CD33C1724D99103001949C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BA3E63D61D718373B789A4D /* Pods-AdoptGoCodedLayout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
