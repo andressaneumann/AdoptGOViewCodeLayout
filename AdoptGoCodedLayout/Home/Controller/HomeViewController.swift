@@ -9,33 +9,54 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    let helloLabel: UILabel = {
-       let label = UILabel()
-        
-        label.text = "Olá, "
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20.0)
-        label.textColor = UIColor.gray
-        return label
-    }()
     
-    let userLabel: UILabel = {
+    let welcomeLabel: UILabel = {
         let label = UILabel()
-        
-        label.text = "usuário!"
         label.translatesAutoresizingMaskIntoConstraints = false
+
+        let attributedText = NSMutableAttributedString(string: "Olá, ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30), NSAttributedString.Key.foregroundColor: UIColor.primaryFontColor])
+        
+        attributedText.append(NSAttributedString(string: "usuário!", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30), NSAttributedString.Key.foregroundColor: UIColor.mainPurpleColor]))
+        
+        label.attributedText = attributedText
+
         return label
     }()
     
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        let attributedText = NSMutableAttributedString(string: "Seu novo melhor amigo pode estar aqui!", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor: UIColor.primaryFontColor])
+        
+        label.attributedText = attributedText
+        
+        return label
+    }()
     
     //VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.mainBackgroundGrayColor
+        
+        
+        setupLabels()
+        setupLayout()
+        
     }
     
     private func setupLabels() {
-        view.addSubview(helloLabel)
+        view.addSubview(welcomeLabel)
+        view.addSubview(descriptionLabel)
+    }
+    
+    private func setupLayout() {
+        welcomeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
+        welcomeLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        
+        descriptionLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 10).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
     }
 
 }
