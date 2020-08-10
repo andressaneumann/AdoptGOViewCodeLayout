@@ -9,56 +9,96 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UICollectionViewController {
     
-    let welcomeLabel: UILabel = {
-        let label = UILabel()
-        
-        label.attributedText = NSMutableAttributedString().normal("Olá, ", 30, .primaryFontColor).bold("usuário!", 30, .mainPurpleColor)
-
-        return label
-    }()
+    let petList = PetDAO().returnPets()
     
-    let descriptionLabel: UILabel = {
-        let label = UILabel()
-
-        let attributedText = NSMutableAttributedString(string: "Seu novo melhor amigo pode estar aqui!", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.foregroundColor: UIColor.primaryFontColor])
-        
-        label.attributedText = attributedText
-        
-        return label
-    }()
-    
-    //VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.mainBackgroundGrayColor
+        navigationItem.title = "Home"
+        
+        collectionView.backgroundColor = UIColor.mainBackgroundGrayColor
+        
+        collectionView.register(HomeHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerIdentifier")
 
-        setup()        
+        collectionView.register(PetCollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return petList.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PetCollectionViewCell
+        
+        let pet = petList[indexPath.item]
+        
+        cell.setupCell(with: pet)
+        
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerIdentifier", for: indexPath)
+        
+        return header
+    }
+    
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 165, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 180)
     }
 }
 
-extension HomeViewController: ViewConfigurator {
-    
-    func setupConstraints() {
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+struct ControllerViewRepresentable: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .green
         
-        welcomeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(60)
-            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
-            make.trailing.equalTo(self.view.safeAreaLayoutGuide)
-            make.height.equalTo(50)
-        }
+        let nav = UINavigationController(rootViewController: HomeViewController())
         
-        descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(welcomeLabel.snp.bottom).offset(10)
-            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
-            make.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-20)
-        }
+        return nav.view!
     }
-    
-    func setupViewHierarchy() {
-        view.addSubview(welcomeLabel)
-        view.addSubview(descriptionLabel)
+
+    func updateUIView(_ view: UIView, context: Context) {
+
     }
-    
 }
+
+@available(iOS 13.0, *)
+struct ViewControllerPreview: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ControllerViewRepresentable()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
+                .previewDisplayName("iPhone SE")
+
+            ControllerViewRepresentable()
+                .previewDevice(PreviewDevice(rawValue: "iPhone Pro Max"))
+                .previewDisplayName("iPhone Pro Max")
+
+            ControllerViewRepresentable()
+                .previewDevice(PreviewDevice(rawValue: "iPhone Pro"))
+                .previewDisplayName("iPhone Pro")
+        }
+    }
+}
+#endif
