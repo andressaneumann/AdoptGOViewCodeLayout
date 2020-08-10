@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C2A7F6F24E1DA8300137465 /* PetsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A7F6E24E1DA8300137465 /* PetsPageViewController.swift */; };
 		6C908AEF24DAF746004E20A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AEE24DAF746004E20A3 /* HomeViewController.swift */; };
 		6C908AF424DB0A1B004E20A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF324DB0A1B004E20A3 /* UIColor.swift */; };
 		6C908AF724DB2362004E20A3 /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF624DB2362004E20A3 /* ViewConfigurator.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		6BA3E63D61D718373B789A4D /* Pods-AdoptGoCodedLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptGoCodedLayout.release.xcconfig"; path = "Target Support Files/Pods-AdoptGoCodedLayout/Pods-AdoptGoCodedLayout.release.xcconfig"; sourceTree = "<group>"; };
+		6C2A7F6E24E1DA8300137465 /* PetsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsPageViewController.swift; sourceTree = "<group>"; };
 		6C908AEE24DAF746004E20A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6C908AF324DB0A1B004E20A3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		6C908AF624DB2362004E20A3 /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
@@ -75,6 +77,30 @@
 				E38514B54390D17FACB3F39B /* Pods_AdoptGoCodedLayout.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C2A7F6B24E1DA3E00137465 /* PetsPage */ = {
+			isa = PBXGroup;
+			children = (
+				6C2A7F6D24E1DA5800137465 /* Controller */,
+				6C2A7F6C24E1DA4800137465 /* View */,
+			);
+			path = PetsPage;
+			sourceTree = "<group>";
+		};
+		6C2A7F6C24E1DA4800137465 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6C2A7F6D24E1DA5800137465 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C2A7F6E24E1DA8300137465 /* PetsPageViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		6C908AEB24DAF709004E20A3 /* Home */ = {
@@ -141,6 +167,7 @@
 		6CD33C0324D99102001949C7 /* AdoptGoCodedLayout */ = {
 			isa = PBXGroup;
 			children = (
+				6C2A7F6B24E1DA3E00137465 /* PetsPage */,
 				6CE5F9D324E1D7CE00605E5D /* CustomTabBarController.swift */,
 				6CF23C7724E1AE1F006FCA86 /* DAO */,
 				6CF23C7024E1AD9C006FCA86 /* Model */,
@@ -294,6 +321,7 @@
 				6C908AF724DB2362004E20A3 /* ViewConfigurator.swift in Sources */,
 				6CD33C0724D99102001949C7 /* SceneDelegate.swift in Sources */,
 				6CF23C7D24E1B1E7006FCA86 /* HomeHeader.swift in Sources */,
+				6C2A7F6F24E1DA8300137465 /* PetsPageViewController.swift in Sources */,
 				6CF23C7924E1AE2A006FCA86 /* PetDAO.swift in Sources */,
 				6C908AEF24DAF746004E20A3 /* HomeViewController.swift in Sources */,
 				6CF23C7624E1AE10006FCA86 /* Dog.swift in Sources */,
