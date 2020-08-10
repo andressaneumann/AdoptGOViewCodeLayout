@@ -24,7 +24,7 @@ class PetCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.numberOfLines = 0
         
         return label
