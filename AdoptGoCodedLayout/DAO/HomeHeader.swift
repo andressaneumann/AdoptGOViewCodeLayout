@@ -51,7 +51,7 @@ extension HomeHeader: ViewConfigurator {
     func setupConstraints() {
         
         welcomeLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.safeAreaLayoutGuide).offset(60)
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(40)
             make.leading.equalTo(self.safeAreaLayoutGuide).offset(20)
             make.trailing.equalTo(self.safeAreaLayoutGuide)
             make.height.equalTo(50)
