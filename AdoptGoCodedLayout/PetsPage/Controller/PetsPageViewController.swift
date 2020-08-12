@@ -8,66 +8,50 @@
 
 import UIKit
 
-class PetsPageViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class PetsPageViewController: UICollectionViewController {
     
-    func updateSearchResults(for searchController: UISearchController) {
-        //nothing yet
-    }
+    let petList = PetDAO().returnPets()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.mainBackgroundGrayColor
-
+        navigationItem.title = "Pets"
+        collectionView.backgroundColor = UIColor.mainBackgroundGrayColor
         
-        setup()
+        collectionView.register(PetsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "petsHeaderIdentifier")
+        
+        collectionView.register(PetsPageCollectionViewCell.self, forCellWithReuseIdentifier: "petCellId")
     }
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "petsHeaderIdentifier", for: indexPath)
         
-        label.text = "Pets"
-        label.font = UIFont.systemFont(ofSize: 35)
-        label.textColor = UIColor.primaryFontColor
-        label.textAlignment = .center
-        
-        return label
-    }()
+        return header
+    }
     
-    let amountOfPetsAvailable: UILabel = {
-        let label = UILabel()
-        
-        label.text = "25 disponíveis"
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.primaryFontColor
-        label.textAlignment = .center
-        
-        return label
-    }()
-    
-    var searchController: UISearchController!
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return petList.count
+    }
 
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, amountOfPetsAvailable])
-        stackView.axis = .vertical
-        stackView.spacing = 15
-        stackView.alignment = .center
-        return stackView
-    }()
-    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "petCellId", for: indexPath) as! PetsPageCollectionViewCell
+        
+        let pet = petList[indexPath.item]
+
+        cell.setupCell(with: pet)
+
+        return cell
+    }
 }
 
-extension PetsPageViewController: ViewConfigurator {
-    func setupConstraints() {
-        
-        stackView.snp.makeConstraints { (make) in
-            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(20)
-            make.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-20)
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(30)
-        }
+extension PetsPageViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = collectionView.bounds.width
+
+        return CGSize(width: cellWidth, height: 300)
     }
-    
-    func setupViewHierarchy() {
-        view.addSubview(stackView)
-    }    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 160)
+    }
 }

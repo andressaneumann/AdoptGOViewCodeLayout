@@ -19,7 +19,7 @@ class CustomTabBarController: UITabBarController {
         homeNavController.title = "Home"
         homeNavController.tabBarItem.image = UIImage(named: "home-icon")
         
-        let petsViewController = PetsPageViewController()
+        let petsViewController = PetsPageViewController(collectionViewLayout: UICollectionViewFlowLayout())
         let petsNavController = UINavigationController(rootViewController: petsViewController)
         petsNavController.title = "Pets"
         petsNavController.tabBarItem.image = UIImage(named: "pets-icon")
