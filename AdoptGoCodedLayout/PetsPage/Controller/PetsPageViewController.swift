@@ -10,7 +10,8 @@ import UIKit
 
 class PetsPageViewController: UICollectionViewController {
     
-    let petList = PetDAO().returnPets()
+    lazy var petList = allPets
+    let allPets = PetDAO().returnPets()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,10 @@ class PetsPageViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "petsHeaderIdentifier", for: indexPath)
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "petsHeaderIdentifier", for: indexPath) as? PetsPageHeader else { return UICollectionReusableView() }
+        
+        header.amountOfPetsAvailable.text = "\(petList.count) disponíveis"
+        header.searchBar.delegate = self
         
         return header
     }
@@ -46,12 +50,54 @@ class PetsPageViewController: UICollectionViewController {
 extension PetsPageViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.bounds.width
+        let cellWidth = collectionView.bounds.width - 32
 
-        return CGSize(width: cellWidth, height: 300)
+        return CGSize(width: cellWidth, height: 118)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 160)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+    }
+
+}
+
+extension PetsPageViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        petList = allPets.filter({ (pet) -> Bool in
+            var searchText = searchBar.text ?? ""
+            return pet.name.contains(searchText.trimmingCharacters(in: .whitespacesAndNewlines))
+        })
+        
+        if petList.isEmpty {
+            petList = allPets
+        }
+        
+        collectionView.reloadData()
+    }
+    
+//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        petList = allPets.filter({ (pet) -> Bool in
+//            var searchText = searchBar.text ?? ""
+//            return pet.name.contains(searchText.trimmingCharacters(in: .whitespacesAndNewlines))
+//        })
+//
+//        if petList.isEmpty {
+//            petList = allPets
+//        }
+//
+//        collectionView.reloadData()
+//    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            petList = allPets
+            collectionView.reloadData()
+        }
+    }
+    
 }

@@ -17,15 +17,13 @@ class PetsPageCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
-        
-        
         return imageView
     }()
     
     let breedLabel: UILabel = {
         let label = UILabel()
         
-        label.textColor = .white
+        label.textColor = .primaryFontColor
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.numberOfLines = 0
         
@@ -35,7 +33,7 @@ class PetsPageCollectionViewCell: UICollectionViewCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         
-        label.textColor = .white
+        label.textColor = .primaryFontColor
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         
         return label
@@ -44,7 +42,7 @@ class PetsPageCollectionViewCell: UICollectionViewCell {
     let genderLabel: UILabel = {
         let label = UILabel()
         
-        label.textColor = .white
+        label.textColor = .primaryFontColor
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         
         return label
@@ -53,7 +51,7 @@ class PetsPageCollectionViewCell: UICollectionViewCell {
     let ageLabel: UILabel = {
         let label = UILabel()
         
-        label.textColor = .white
+        label.textColor = .primaryFontColor
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         
         return label
@@ -71,13 +69,16 @@ class PetsPageCollectionViewCell: UICollectionViewCell {
         let stackView = UIStackView(arrangedSubviews: [nameAndGenderContainer, breedLabel, ageLabel])
 
         stackView.axis = .vertical
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
 
         return stackView
     }()
 
     lazy var viewCellContainer: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [imageView])
-
+        let stackView = UIStackView(arrangedSubviews: [imageView, descriptionContainer])
+        stackView.distribution = .fillEqually
+        stackView.spacing = 8
         stackView.axis = .horizontal
 
         return stackView
@@ -99,6 +100,10 @@ class PetsPageCollectionViewCell: UICollectionViewCell {
         nameLabel.text = pet.name
         genderLabel.text = pet.gender.rawValue
         ageLabel.text = "1 year"
+        
+        backgroundColor = .white
+        layer.cornerRadius = 8
+        clipsToBounds = true
     }
     
 }
@@ -107,9 +112,10 @@ extension PetsPageCollectionViewCell: ViewConfigurator {
     func setupConstraints() {
         
         viewCellContainer.snp.makeConstraints { (make) in
-            make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(20)
-            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-20)
-            make.height.equalTo(300)
+            make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading)
+            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing)
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
     }
     

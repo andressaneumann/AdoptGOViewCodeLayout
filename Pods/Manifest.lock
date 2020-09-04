@@ -1,16 +1,20 @@
 PODS:
   - SnapKit (5.0.1)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - SnapKit
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - SnapKit
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: e55f1e26c542f48912fa14e0514a7f88d5a3977e
+PODFILE CHECKSUM: 1ce5f3d461c97838b67af97cdfe28bbfd0339bb8
 
 COCOAPODS: 1.9.3

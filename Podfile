@@ -7,5 +7,6 @@ target 'AdoptGoCodedLayout' do
   pod 'SnapKit'
 
   # Pods for AdoptGoCodedLayout
+	pod 'TinyConstraints'
 
 end

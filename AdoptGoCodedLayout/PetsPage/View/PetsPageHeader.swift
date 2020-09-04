@@ -34,7 +34,6 @@ class PetsPageHeader: UICollectionReusableView {
     let amountOfPetsAvailable: UILabel = {
         let label = UILabel()
         
-        label.text = "25 disponíveis"
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = UIColor.primaryFontColor
         label.textAlignment = .center
@@ -42,13 +41,18 @@ class PetsPageHeader: UICollectionReusableView {
         return label
     }()
     
-    //var searchController: UISearchController!
+    var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        
+        searchBar.searchBarStyle = .minimal
+        searchBar.placeholder = "Search here"        
+        return searchBar
+    }()
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, amountOfPetsAvailable])
+        let stackView = UIStackView(arrangedSubviews: [searchBar, titleLabel, amountOfPetsAvailable])
         stackView.axis = .vertical
         stackView.spacing = 15
-        //stackView.alignment = .center
         return stackView
     }()
 }
@@ -57,9 +61,10 @@ extension PetsPageHeader: ViewConfigurator {
     func setupConstraints() {
         
            stackView.snp.makeConstraints { (make) in
-               make.leading.equalTo(self.safeAreaLayoutGuide).offset(20)
-               make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-20)
-               make.top.equalTo(self.safeAreaLayoutGuide).offset(30)
+               make.leading.equalTo(self.safeAreaLayoutGuide)
+               make.trailing.equalTo(self.safeAreaLayoutGuide)
+               make.top.equalTo(self.safeAreaLayoutGuide)
+               make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-20)
            }
     }
     

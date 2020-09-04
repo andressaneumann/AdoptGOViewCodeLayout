@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C197E78250185970014812F /* AdoptGoCodedLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C197E77250185970014812F /* AdoptGoCodedLayoutTests.swift */; };
 		6C2A7F6F24E1DA8300137465 /* PetsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A7F6E24E1DA8300137465 /* PetsPageViewController.swift */; };
 		6C2A7F7324E2116600137465 /* PetsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A7F7224E2116600137465 /* PetsPageHeader.swift */; };
 		6C2A7F7524E2156300137465 /* PetsPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2A7F7424E2156300137465 /* PetsPageCollectionViewCell.swift */; };
@@ -14,6 +15,7 @@
 		6C908AF424DB0A1B004E20A3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF324DB0A1B004E20A3 /* UIColor.swift */; };
 		6C908AF724DB2362004E20A3 /* ViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF624DB2362004E20A3 /* ViewConfigurator.swift */; };
 		6C908AF924DB2970004E20A3 /* NSMutableAttributedString+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C908AF824DB2970004E20A3 /* NSMutableAttributedString+Styles.swift */; };
+		6C9FA4752502AEF3006DCC5A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FA4742502AEF3006DCC5A /* DetailViewController.swift */; };
 		6CD33C0524D99102001949C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD33C0424D99102001949C7 /* AppDelegate.swift */; };
 		6CD33C0724D99102001949C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD33C0624D99102001949C7 /* SceneDelegate.swift */; };
 		6CD33C0E24D99103001949C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD33C0D24D99103001949C7 /* Assets.xcassets */; };
@@ -28,8 +30,21 @@
 		E0BDA0323A705DED5082CE49 /* Pods_AdoptGoCodedLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E38514B54390D17FACB3F39B /* Pods_AdoptGoCodedLayout.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6C197E7A250185970014812F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CD33BF924D99102001949C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CD33C0024D99102001949C7;
+			remoteInfo = AdoptGoCodedLayout;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6BA3E63D61D718373B789A4D /* Pods-AdoptGoCodedLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdoptGoCodedLayout.release.xcconfig"; path = "Target Support Files/Pods-AdoptGoCodedLayout/Pods-AdoptGoCodedLayout.release.xcconfig"; sourceTree = "<group>"; };
+		6C197E75250185970014812F /* AdoptGoCodedLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdoptGoCodedLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C197E77250185970014812F /* AdoptGoCodedLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptGoCodedLayoutTests.swift; sourceTree = "<group>"; };
+		6C197E79250185970014812F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C2A7F6E24E1DA8300137465 /* PetsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsPageViewController.swift; sourceTree = "<group>"; };
 		6C2A7F7224E2116600137465 /* PetsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsPageHeader.swift; sourceTree = "<group>"; };
 		6C2A7F7424E2156300137465 /* PetsPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsPageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -37,6 +52,7 @@
 		6C908AF324DB0A1B004E20A3 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		6C908AF624DB2362004E20A3 /* ViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurator.swift; sourceTree = "<group>"; };
 		6C908AF824DB2970004E20A3 /* NSMutableAttributedString+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Styles.swift"; sourceTree = "<group>"; };
+		6C9FA4742502AEF3006DCC5A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6CD33C0124D99102001949C7 /* AdoptGoCodedLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdoptGoCodedLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD33C0424D99102001949C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CD33C0624D99102001949C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6C197E72250185970014812F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6CD33BFE24D99102001949C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +104,37 @@
 				E38514B54390D17FACB3F39B /* Pods_AdoptGoCodedLayout.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C197E6F250185050014812F /* FavoritesPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavoritesPage;
+			sourceTree = "<group>";
+		};
+		6C197E70250185360014812F /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		6C197E76250185970014812F /* AdoptGoCodedLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C197E77250185970014812F /* AdoptGoCodedLayoutTests.swift */,
+				6C197E79250185970014812F /* Info.plist */,
+			);
+			path = AdoptGoCodedLayoutTests;
+			sourceTree = "<group>";
+		};
+		6C197E7F250185D00014812F /* DetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+				6C9FA4742502AEF3006DCC5A /* DetailViewController.swift */,
+			);
+			path = DetailsPage;
 			sourceTree = "<group>";
 		};
 		6C2A7F6B24E1DA3E00137465 /* PetsPage */ = {
@@ -156,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				6CD33C0324D99102001949C7 /* AdoptGoCodedLayout */,
+				6C197E76250185970014812F /* AdoptGoCodedLayoutTests */,
 				6CD33C0224D99102001949C7 /* Products */,
 				1E9B539D8F11CF581895C472 /* Pods */,
 				5590DC4E24072F08866492CA /* Frameworks */,
@@ -166,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				6CD33C0124D99102001949C7 /* AdoptGoCodedLayout.app */,
+				6C197E75250185970014812F /* AdoptGoCodedLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +229,9 @@
 		6CD33C0324D99102001949C7 /* AdoptGoCodedLayout */ = {
 			isa = PBXGroup;
 			children = (
+				6C197E7F250185D00014812F /* DetailsPage */,
+				6C197E70250185360014812F /* ProfilePage */,
+				6C197E6F250185050014812F /* FavoritesPage */,
 				6C2A7F6B24E1DA3E00137465 /* PetsPage */,
 				6CE5F9D324E1D7CE00605E5D /* CustomTabBarController.swift */,
 				6CF23C7724E1AE1F006FCA86 /* DAO */,
@@ -210,6 +269,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6C197E74250185970014812F /* AdoptGoCodedLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C197E7C250185970014812F /* Build configuration list for PBXNativeTarget "AdoptGoCodedLayoutTests" */;
+			buildPhases = (
+				6C197E71250185970014812F /* Sources */,
+				6C197E72250185970014812F /* Frameworks */,
+				6C197E73250185970014812F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C197E7B250185970014812F /* PBXTargetDependency */,
+			);
+			name = AdoptGoCodedLayoutTests;
+			productName = AdoptGoCodedLayoutTests;
+			productReference = 6C197E75250185970014812F /* AdoptGoCodedLayoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6CD33C0024D99102001949C7 /* AdoptGoCodedLayout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CD33C1524D99103001949C7 /* Build configuration list for PBXNativeTarget "AdoptGoCodedLayout" */;
@@ -235,10 +312,14 @@
 		6CD33BF924D99102001949C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1170;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Andressa Neumann Silva";
 				TargetAttributes = {
+					6C197E74250185970014812F = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 6CD33C0024D99102001949C7;
+					};
 					6CD33C0024D99102001949C7 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -258,11 +339,19 @@
 			projectRoot = "";
 			targets = (
 				6CD33C0024D99102001949C7 /* AdoptGoCodedLayout */,
+				6C197E74250185970014812F /* AdoptGoCodedLayoutTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6C197E73250185970014812F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6CD33BFF24D99102001949C7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,11 +406,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6C197E71250185970014812F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C197E78250185970014812F /* AdoptGoCodedLayoutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6CD33BFD24D99102001949C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6CD33C0524D99102001949C7 /* AppDelegate.swift in Sources */,
+				6C9FA4752502AEF3006DCC5A /* DetailViewController.swift in Sources */,
 				6CF23C7B24E1B03D006FCA86 /* PetCollectionViewCell.swift in Sources */,
 				6C2A7F7324E2116600137465 /* PetsPageHeader.swift in Sources */,
 				6CF23C7224E1ADBA006FCA86 /* Cat.swift in Sources */,
@@ -342,6 +440,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6C197E7B250185970014812F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CD33C0024D99102001949C7 /* AdoptGoCodedLayout */;
+			targetProxy = 6C197E7A250185970014812F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		6CD33C0F24D99103001949C7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -354,6 +460,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6C197E7D250185970014812F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdoptGoCodedLayoutTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andressa.AdoptGoCodedLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdoptGoCodedLayout.app/AdoptGoCodedLayout";
+			};
+			name = Debug;
+		};
+		6C197E7E250185970014812F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdoptGoCodedLayoutTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andressa.AdoptGoCodedLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdoptGoCodedLayout.app/AdoptGoCodedLayout";
+			};
+			name = Release;
+		};
 		6CD33C1324D99103001949C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -474,6 +620,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YR5A554B7H;
 				INFOPLIST_FILE = AdoptGoCodedLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -492,6 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YR5A554B7H;
 				INFOPLIST_FILE = AdoptGoCodedLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,6 +655,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6C197E7C250185970014812F /* Build configuration list for PBXNativeTarget "AdoptGoCodedLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C197E7D250185970014812F /* Debug */,
+				6C197E7E250185970014812F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6CD33BFC24D99102001949C7 /* Build configuration list for PBXProject "AdoptGoCodedLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

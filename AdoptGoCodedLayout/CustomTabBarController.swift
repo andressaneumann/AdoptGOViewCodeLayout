@@ -24,6 +24,11 @@ class CustomTabBarController: UITabBarController {
         petsNavController.title = "Pets"
         petsNavController.tabBarItem.image = UIImage(named: "pets-icon")
         
-        viewControllers = [homeNavController, petsNavController]
+        let detaisViewController = DetailViewController()
+        let detaisNavController = UINavigationController(rootViewController: detaisViewController)
+        detaisNavController.title = "Detais"
+        detaisNavController.tabBarItem.image = UIImage(named: "breed-icon")
+        
+        viewControllers = [homeNavController, petsNavController, detaisNavController]
     }
 }
